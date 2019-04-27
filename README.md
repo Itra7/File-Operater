@@ -1,3 +1,4 @@
-File-Operater
+# File-Operater
 
-gcc -o main main.c pidgiduid.c -std=c11
+Build:
+  ` cc -o main main.c pidgiduid.c -std=c11 ` 
