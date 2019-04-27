@@ -36,6 +36,10 @@ int main(int argc, char *argv[]){
 		printf("0.gid, 1.pid, 2.uid?\n");
 		signed get = 0;
 		scanf("%d", &get);
+		if(get < 0 && get > 2){
+			printf("Too long\n");
+			exit(EXIT_FAILURE);
+		}
 		void (*ptr[])(char *argv[]) = { gidd, pidd, uidd};
 		(*ptr[get])(argv);
 	}
