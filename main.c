@@ -12,13 +12,15 @@
 /*	 Headers 	*/
 
 #include "pidgiduid.h"
+#include "helpp.h"
 
 /*	preprocessor 	*/
 #define RW (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH)
 static int c();
 static int o();
 int main(int argc, char *argv[]){
-	char line[3];
+	help();
+	char line[2];
 	int fail = 0;
 	if (fail = fgets(line, sizeof(line), stdin) == NULL){
 		perror("Fgets error:");
@@ -64,10 +66,11 @@ static int o(){
 			exit(EXIT_FAILURE);
 		}
 		printf("Enter options\n");
+		help2();
 		char options[2];
 		scanf("%s", options);
 		options[2] = '\0';
-		 int sek = 0;
+		int sek = 0;
 		if (strcmp(options, "-s") == 0){
 			
 			printf("How much?\n");
@@ -86,6 +89,6 @@ static int o(){
 			fputs(text, fp);
 		}
 		fclose (fp);
-		exit(EXIT_SUCCESS);
+		//	exit(EXIT_SUCCESS);
 
 };
